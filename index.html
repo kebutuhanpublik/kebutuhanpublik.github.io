@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habotv/cdn@master/bootstraps.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habotv/cdn@master/migistelins.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habotv/cdn@master/tiny-sliders.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/gh/habotv/player@master/haboplay.css" rel="stylesheet">
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+    }
+
+    #containers {
+      position: absolute;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    *:focus {
+      outline: none;
+    }
+  </style>
+  <style>
+    @media only screen and (min-width:1400px) {
+      .container {
+        max-width: 1400px;
+      }
+    }
+
+    @media only screen and (min-width:1200px) and (max-width:1399px) {
+      .container {
+        max-width: 1399px;
+      }
+    }
+
+    @media only screen and (min-width:992px) and (max-width:1199px) {
+      .container {
+        max-width: 1199px;
+      }
+    }
+
+    @media only screen and (min-width:768px) and (max-width:991px) {
+      .container {
+        max-width: 991px;
+      }
+    }
+
+    .custom-container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media only screen and (min-width:1400px) {
+      .custom-container {
+        max-width: 1400px;
+      }
+    }
+
+    @media only screen and (min-width:1200px) and (max-width:1399px) {
+      .custom-container {
+        max-width: 1399px;
+      }
+    }
+
+    @media only screen and (min-width:992px) and (max-width:1199px) {
+      .custom-container {
+        max-width: 1199px;
+      }
+    }
+
+    @media only screen and (min-width:768px) and (max-width:991px) {
+      .custom-container {
+        max-width: 991px;
+      }
+    }
+
+    @media only screen and (max-width:767px) {
+      .custom-container {
+        max-width: 767px;
+      }
+    }
+
+    @media only screen and (min-width:480px) and (max-width:767px) {
+      .custom-container {
+        max-width: 767px;
+      }
+    }
+
+    @media only screen and (min-width:576px) and (max-width:767px) {
+      .custom-container {
+        max-width: 767px;
+      }
+    }
+
+    .btn-group-sm>.btn,
+    .btn-sm {
+      font-size: 11px;
+      padding: 0.15rem 0.500rem;
+      border-radius: 3px;
+    }
+
+    .btn-sx {
+      font-size: 13px;
+      padding: 0.15rem 0.500rem;
+      border-radius: 0px;
+    }
+
+    .btn-round {
+      border-radius: 50rem !important;
+    }
+
+    .btn-group-lg>.btn.btn-round,
+    .btn-lg.btn-round {
+      padding: 11px 22px;
+    }
+
+    .btn-group-sm>.btn.btn-round,
+    .btn-sm.btn-round {
+      padding: 0.1rem 0.5rem;
+    }
+
+    .btn-dark {
+      color: #ffffff;
+      background-color: #008080;
+      border-color: #008080;
+      box-shadow: 0px 0px 0 0px #3a496b;
+    }
+
+    .btn-dark:hover {
+      color: #ffffff;
+      background-color: #202335;
+      border-color: #fff;
+    }
+
+    .btn-check:focus+.btn-dark,
+    .btn-dark:focus {
+      color: #ffffff;
+      background-color: #202370;
+      border-color: #fff;
+    }
+
+    .btn-check:checked+.btn-dark,
+    .btn-check:active+.btn-dark,
+    .btn-dark:active,
+    .btn-dark.active,
+    .show>.btn-dark.dropdown-toggle {
+      color: #ffffff;
+      background-color: #1d2124;
+      border-color: #171a1d;
+    }
+
+    .btn-dark:disabled,
+    .btn-dark.disabled {
+      color: #ffffff;
+      background-color: #fff;
+      border-color: #fff;
+    }
+
+    .btn-success {
+      color: #202329;
+      background-color: #2ecc4a;
+      border-color: #2ecc4a;
+    }
+
+    .btn-success:hover {
+      color: #ffffff;
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
+
+    .btn-check:focus+.btn-success,
+    .btn-success:focus {
+      color: #ffffff;
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
+
+    .btn-check:checked+.btn-success,
+    .btn-check:active+.btn-success,
+    .btn-success:active,
+    .btn-success.active,
+    .show>.btn-success.dropdown-toggle {
+      color: #ffffff;
+      background-color: #1e7e34;
+      border-color: #1c7430;
+    }
+
+    .btn-success:disabled,
+    .btn-success.disabled {
+      color: #ffffff;
+      background-color: #2ecc4a;
+      border-color: #2ecc4a;
+    }
+
+    .element-heading-wrapper i {
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #008080;
+    }
+
+    .bg-dark {
+      background-color: #202329 !important;
+    }
+  </style>
+  <style>
+    /* :: Dark */
+    [data-theme=dark] {
+      background-color: #111319;
+    }
+
+    [data-theme=dark] .dark-mode-switching {
+      background-color: #111319;
+    }
+
+    [data-theme=dark] .dark-mode-switching i {
+      color: #f1b10f;
+    }
+
+    [data-theme=dark] .dark-mode-switching .dark-mode-text {
+      display: block;
+    }
+
+    [data-theme=dark] .dark-mode-switching .light-mode-text {
+      display: none;
+    }
+
+    [data-theme=dark] .rtl-mode-switching {
+      background-color: #111319;
+    }
+
+    [data-theme=dark] .rtl-mode-switching i {
+      color: #f1b10f;
+    }
+
+    [data-theme=dark] body {
+      background-color: #111319;
+    }
+
+    [data-theme=dark] body h1,
+    [data-theme=dark] body h2,
+    [data-theme=dark] body h3,
+    [data-theme=dark] body h4,
+    [data-theme=dark] body h5,
+    [data-theme=dark] body h6 {
+      color: #ffffff;
+    }
+
+    [data-theme=dark] body #preloader {
+      background-color: #0C153B;
+    }
+
+    [data-theme=dark] body .card {
+      background-color: #202329;
+    }
+
+    [data-theme=dark] body .header-area {
+      background-color: #008B8B;
+      border-bottom-color: rgba(255, 255, 255, 0.07);
+    }
+
+    [data-theme=dark] body .footer-nav-area {
+      background-color: #008B8B;
+      border-top-color: rgba(255, 255, 255, 0.07);
+    }
+
+    [data-theme=dark] body .footer-nav {
+      background-color: #008B8B;
+    }
+
+    /* :: Blog */
+
+    .card-badge {
+      top: 0.5rem;
+      left: 0.5rem;
+    }
+
+    .card-body {
+      padding: 0.8rem;
+    }
+
+    .card-blog-img {
+      width: 50%;
+      max-width: 50%;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      height: 173px;
+      background-position: center center;
+      background-size: cover;
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    .card-blog-content {
+      padding: 0.5rem;
+      width: 50%;
+      max-width: 50%;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+    }
+
+    .blog-description p {
+      font-size: 1rem;
+    }
+
+    .blog-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .blog-title {
+      font-weight: 500;
+      overflow: hidden;
+      height: 20px;
+    }
+
+    .blog-title:hover,
+    .blog-title:focus {
+      color: #0d5afd !important;
+    }
+
+    .single-user-review {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1rem;
+    }
+
+    .single-user-review:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .single-user-review .user-thumbnail {
+      margin-top: 0.5rem;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 40px;
+      flex: 0 0 40px;
+      width: 40px;
+      max-width: 40px;
+      margin-right: 0.5rem;
+    }
+
+    .single-user-review .user-thumbnail img {
+      border-radius: 50%;
+    }
+
+    .single-user-review .name-date {
+      display: block;
+      font-size: 12px;
+    }
+
+    .post-bookmark {
+      background-color: rgba(255, 255, 255, 0.2);
+      width: 1rem;
+      height: 1rem;
+      text-align: center;
+      line-height: 2rem;
+      border-radius: 50%;
+      color: #ffffff;
+    }
+
+    .post-bookmark:hover,
+    .post-bookmark:focus {
+      background-color: #ea4c62;
+    }
+  </style>
+  <style>
+    #dplayer {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: -1000;
+    }
+
+    .fixs-content {
+      height: 260px;
+      padding: 0;
+      overflow-y: scroll;
+      background-color: #0000
+    }
+
+    .video-container {
+      position: relative;
+      margin-top: 0px;
+    }
+
+    .video-container:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-bottom: 60.25%;
+    }
+
+    .video-container>div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+    }
+
+    .embed-container {
+      position: relative;
+      padding-bottom: 57.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100%;
+    }
+
+    .stick {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      font-size: 11px;
+      line-height: 1em;
+      font-weight: 500;
+      padding: 6px 5px;
+      border-radius: 20px;
+      z-index: 4;
+      background: #00ff0000
+    }
+
+    .stick.stick-live,
+    .badge-live {
+      background: #00ff0000;
+      margin-left: 5px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .stick.stick-live .dot,
+    .badge-live .dot {
+      background: #fff;
+      margin: 2px 5px 2px 0;
+      float: left;
+      animation: blind .5s linear infinite;
+      opacity: 0
+    }
+
+    @keyframes blind {
+      0% {
+        opacity: 0
+      }
+
+      100% {
+        opacity: 1
+      }
+    }
+
+    .sticks {
+      position: absolute;
+      top: .8rem;
+      left: .6rem;
+      font-size: 8px;
+      line-height: 1em;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 6px;
+      z-index: 4;
+      background: #3b3d42
+    }
+
+    .sticks.sticks-lives,
+    .badge-lives {
+      background: #f2152d;
+      margin-left: 5px;
+      color: #fff;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px rgba(251, 8, 64, .5)
+    }
+
+    .sticks.sticks-lives-live .dot,
+    .badge-live .dot {
+      background: #fff;
+      margin: 2px 5px 2px 0;
+      float: left;
+      animation: blind .5s linear infinite;
+      opacity: 0
+    }
+
+    @keyframes blind {
+      0% {
+        opacity: 0
+      }
+
+      100% {
+        opacity: 1
+      }
+    }
+
+    .stickz {
+      position: absolute;
+      bottom: .5rem;
+      left: .6rem;
+      font-size: 8px;
+      line-height: 1em;
+      font-weight: 500;
+      padding: 5px 8px;
+      border: 1px solid #ffff !important;
+      border-radius: 6px;
+      z-index: 4;
+      background: #3b3d42
+    }
+
+    .stickz.stickz-livez,
+    .badge-lives {
+      background: #f2152d;
+      margin-left: 5px;
+      color: #fff;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px rgba(251, 8, 64, .5)
+    }
+
+    .stickz.stickz-livez-lives-live .dot,
+    .badge-live .dot {
+      background: #fff;
+      margin: 2px 5px 2px 0;
+      float: left;
+      animation: blind .5s linear infinite;
+      opacity: 0
+    }
+
+    @keyframes blind {
+      0% {
+        opacity: 0
+      }
+
+      100% {
+        opacity: 1
+      }
+    }
+
+    .atas {
+      position: absolute;
+      top: .6rem;
+      right: .6rem;
+      font-size: 8px;
+      line-height: 1em;
+      font-weight: 500;
+      padding: 5px 8px;
+      border: 1px solid #ffff !important;
+      border-radius: 6px;
+      z-index: 4;
+      background: #191b20
+    }
+
+    .kanan,
+    .badge-lives {
+      background: #191b20;
+      margin-left: 5px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .bawah {
+      position: absolute;
+      bottom: .6rem;
+      left: .5rem;
+      font-size: 8px;
+      line-height: 1em;
+      font-weight: 500;
+      padding: 5px 8px;
+      border: 1px solid #ffff !important;
+      border-radius: 5px;
+      z-index: 4;
+      background: #191b20
+    }
+
+    .kiri,
+    .badge-lives {
+      background: #191b20;
+      margin-left: 5px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+
+<script type="text/javascript">
+  function $(id) {
+    return document.getElementById(id);
+  }
+  function dw(str) {
+    document.write(str);
+  }
+  function J_get(name, url) {
+    url = url ? url : self.window.document.location.href;
+    var start = url.indexOf(name + '=');
+    if (start == -1) return '';
+    var len = start + name.length + 1;
+    var end = url.indexOf('######', len);
+    if (end == -1) end = url.length;
+    return unescape(url.substring(len, end));
+  }
+  //-->
+
+  id = J_get('id');
+
+  var gid = encodeURIComponent(id);
+</script>
+
+<body>
+  <!-- Internet Connection Status -->
+  <div class="internet-connection-status" id="internetStatus"
+    style="display: none; background-color: rgb(0, 184, 148);">
+    Your internet connection is back.
+  </div>
+  <div style="clear:both;"></div>
+  <abc>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div
+          class="header-content header-style-five position-relative d-flex align-items-center justify-content-between">
+          <div class="setting-wrapper">
+            <div class="element-heading-wrapper">
+              <a href="/"><i class="bi bi-house"></i><span></span></a>
+            </div>
+          </div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h6 class="mb-0"><b><big>KEBUTUHAN PUBLIK</big></b></h6>
+          </div>
+          <div class="setting-wrapper">
+            <div class="element-heading-wrapper" style="margin-right:-10px;">
+              <a href=""><i class="bi bi-arrow-clockwise"></i><span></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <link href="https://cdn.jsdelivr.net/gh/habotv/player@master/habocontrols.css" rel="stylesheet">
+    <div class="page-content-wrapper pb-2">
+      <div class="container">
+        <div style="padding:0px">
+          <div class="row">
+            <div class="col-12 col-md-8" style="padding:0px">
+              <div class="embed-container">
+                <div id="tv">
+                  <a title=""><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimGPK_DA2-W6VMX0jwg9Dwt4oZwEhWMRwJuwAwJZK493AmNQPb7eYN2vSA9pd-i1aAYBvJX0DN1_SC3QFyRA0xgE3K8S7X0M322iTIqla4WqN4TqLw98Q3YMHAjtQQ-OA4iKOgZMbAPvxPD7HLhp2q5MuR9EDfO-xLunu2weTG7IDWzwBoLxLPnbjXTw/s1600/kebutuhanpublik.png" style="width:100%"></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4" style="padding:0px">
+              <div style="text-align:center;margin-bottom:5px;">
+                <a class="btn btn-sx w-100 btn-dark" href="/">
+                  <marquee>JIKA CHANNEL <font color="yellow">OFF/ERROR</font>, CHANNEL AKAN KEMBALI DI AKTIF KAN SEBELUM
+                    PERTANDINGAN DI MULAI, INFO LEBIH LANJUT JOIN DI GRUP TELEGRAM<font color="yellow"> KEBUTUHANPUBLIK</font>.
+                  </marquee>
+                </a>
+              </div>
+              <div style="text-align:center;margin-bottom:0px;">
+
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:rcti();">AFFCUP 1</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:affcup1();">AFFCUP 2</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:affcup2();">AFFCUP 3</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:arab();">LIGA ARAB S</a><a
+                  class="btn m-1 btn-sm btn-dark" href="javascript:dazn1();">DAZN 1</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:dazn2();">DAZN 2</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:dazn3();">DAZN 3</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:dazn4();">DAZN 4</a><a
+                  class="btn m-1 btn-sm btn-dark" href="javascript:laligatv1();">LALIGA TV</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:premierleague();">LALIGA TV</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:laligatv2();">MAXIMO</a>
+
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:btsp1();">BT SPORTS1</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:btsp2();">BT SPORTS2</a>
+
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:tntsports();">TNT SPORTS</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:spotv();">SPOTV 1 (+)</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:spotv1();">SPOTV 1 HD</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:spotv2();">SPOTV 2 HD</a><a
+                  class="btn m-1 btn-sm btn-dark" href="javascript:ptvs();">PTV SPORTS</a>
+
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:beinsport1();">BEIN SPORTS 1</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:beinsport2();">BEIN SPORTS 2</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:beinsport3();">BEIN SPORTS 3</a><a
+                  class="btn m-1 btn-sm btn-dark" href="javascript:ten1();">TEN 1 HD</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:ten2();">TEN 2 HD</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:ten3();">TEN 3 HD</a>
+
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:sky1();">SKY 1</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:sky2();">SKY 2</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:sky3();">SKY 3</a><a class="btn m-1 btn-sm btn-dark"
+                  href="javascript:ch1();">TUDN TV</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:moji();">SPORTS HD</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:ch3();">CCTV 5</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:ch4();">TVRI Sports</a>
+
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:db1();">Dubai Sports1</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:db2();">Dubai Sports2</a>
+                <a class="btn m-1 btn-sm btn-dark" href="javascript:db3();">Dubai Sports3</a>
+              </div>
+              <br>
+              <script>
+                function arab() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/ssc1" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function rcti() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="https://rctiplus.com/tv/inews" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function affcup1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="https://kreatorsubang.blogspot.com/2023/01/aff-cup-2.html" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function affcup2() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="https://kreatorsubang.blogspot.com/2023/01/aff-cup-3.html" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function affcup3() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/affcup3" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function premierleague() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/premierleague" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function ch1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/play1" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function moji() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/mojitv" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function ch3() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/play3" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function ch4() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="play4" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function spotv() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/spotv" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function spotv1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/spotv1" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function spotv2() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/spotv2" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function db1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/dbsport1" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                } function db2() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/dbsport2" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function db3() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/dbsport3" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function ten1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="https://123ecast.me/embed.php?player=desktop&amp;v=ten1endia&amp" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function ten2() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="https://123ecast.me/embed.php?player=desktop&amp;v=ten2endia&amp" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function ten3() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="https://123ecast.me/embed.php?player=desktop&amp;v=ten3endia&amp" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function sky1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="https://123ecast.me/embed.php?player=desktop&amp;v=skysme&amp" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function sky2() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="https://123ecast.me/embed.php?player=desktop&amp;v=skyscric&amp" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function sky3() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="https://123ecast.me/embed.php?player=desktop&amp;v=skysfott&amp" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function laligatv1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/laligatv" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function laligatv2() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/maximo" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function btsp1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/btsp1" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function btsp2() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/btsp2" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function laligatv3() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/laligatv3" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function beinsport1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/beinsport1" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function beinsport2() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/beinsport2" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function beinsport3() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/beinsport3" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function tntsports() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/tntsports" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function espn1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/espn1" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function espn2() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/espn2" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+                function espn3() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/espn3" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                } function dazn1() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/dazn1" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function dazn2() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/dazn2" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function dazn3() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/dazn3" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }
+
+                function dazn4() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/dazn4" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                } function ptvs() {
+                  document.getElementById("tv")
+                  .innerHTML = '<iframe src="/ptvsports" allow="encrypted-media" scrolling="no" frameborder="0" height="100%" width="100%" gesture="media" allowfullscreen="allowfullscreen"></iframe>';
+                }</script>
+              <!-- Histats.com  (div with counter) -->
+              <center>
+                <br>
+                <div class="container pt-2">
+                  <h1 class="text-light text-center fs-5 fw-bold lh-1"><big><b>Kebutuhan Publik</b></big></h1>
+                  <p class="text-light text-center  fs-7 lh-0">Situs dan Aplikasi TV Streaming Olahraga Dan Hiburan,
+                    Kamu Bisa Nonton Events Olahraga Gratis Kapanpun di Manapun
+                    <br>
+                    <br>
+                    <div id="ignielSubscribe">
+                      <div class="email__">
+                        <div class="email">
+                          <form data-v-2bdb5506="" action="https://api.follow.it/subscription-form/NXN0cVgvaUZjR1gvRWc3RE8zL09NZVZvYkE5MlM1bDhzUWR6dUs4bklwK2hBTm12eWRIQlBOZVRKTFhCcFhBaGtKVmI0cXlULzN3WWJwWTc3M09MNEcwQUE1YzBQd3ZubitGekFTakhadVF5L3pBVWcybGlTdHNLTzRhVEk1UTR8b0lyNUM2VDlYYVYrZVJGQ0ppdGJVZmJsQzZsNnhoWUpJcjRKVmpTOXJUQT0=/8" method="post" onsubmit="window.open('https://api.follow.it/subscription-form/NXN0cVgvaUZjR1gvRWc3RE8zL09NZVZvYkE5MlM1bDhzUWR6dUs4bklwK2hBTm12eWRIQlBOZVRKTFhCcFhBaGtKVmI0cXlULzN3WWJwWTc3M09MNEcwQUE1YzBQd3ZubitGekFTakhadVF5L3pBVWcybGlTdHNLTzRhVEk1UTR8b0lyNUM2VDlYYVYrZVJGQ0ppdGJVZmJsQzZsNnhoWUpJcjRKVmpTOXJUQT0=/8', target="popupwindow">
+                            <input name="email" class="email" placeholder="Contoh: nama@mail.com"/>
+                            <input name="uri" type="hidden" value="igniel" /> <input name="loc" type="hidden" value="en_US" />
+                            <button type="submit"></button>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="medsos__">
+                        <div class="medsos">
+                          <a class="facebook" title="Facebook" href="https://www.facebook.com/score808indonesia/" rel="nofollow noopener" target="_blank"><svg viewbox="0 0 24 24"> <path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg></a>
+                          <a class="twitter" title="Telegram" href="https://t.me/livestream808" rel="nofollow noopener" target="_blank"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <circle style="fill:#47B0D3;" cx="256" cy="256" r="256"/>
+                    <path style="fill:#3298BA;" d="M34.133,256c0-135.648,105.508-246.636,238.933-255.421C267.424,0.208,261.737,0,256,0
+                      C114.615,0,0,114.615,0,256s114.615,256,256,256c5.737,0,11.424-0.208,17.067-0.579C139.642,502.636,34.133,391.648,34.133,256z"/>
+                    <path style="fill:#E5E5E5;" d="M380.263,109.054c-2.486-1.69-5.676-1.946-8.399-0.679L96.777,236.433
+                      c-4.833,2.251-7.887,7.172-7.766,12.501c0.117,5.226,3.28,9.92,8.065,12.015l253.613,110.457c8.468,3.849,18.439-2.21,18.983-11.453
+                      l14.314-243.341C384.161,113.614,382.748,110.742,380.263,109.054z"/>
+                    <polygon style="fill:#CCCCCC;" points="171.631,293.421 188.772,408 379.168,108.432 "/>
+                    <path style="fill:#FFFFFF;" d="M371.866,108.375L96.777,236.433c-4.737,2.205-7.826,7.121-7.769,12.345
+                      c0.058,5.233,3.276,10.074,8.067,12.171l74.557,32.471l207.536-184.988C376.882,107.33,374.203,107.287,371.866,108.375z"/>
+                    <polygon style="fill:#E5E5E5;" points="211.418,310.749 188.772,408 379.168,108.432 "/>
+                    <path style="fill:#FFFFFF;" d="M380.263,109.054c-0.351-0.239-0.72-0.442-1.095-0.622l-167.75,202.317l139.27,60.657
+                      c8.468,3.849,18.439-2.21,18.983-11.453l14.314-243.341C384.161,113.614,382.748,110.742,380.263,109.054z"/>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    </svg>
+                    </a>
+                          <a class="youtube" title="Tiktok streaming" href="https://www.tiktok.com/@tjikoeja" rel="nofollow noopener" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="IconChangeColor" height="200" width="200"><rect width="256" height="256" fill="000"></rect><path d="M232,84v40a8,8,0,0,1-8,8,103.2,103.2,0,0,1-48-11.7V156A76,76,0,1,1,86.6,81.2a8,8,0,0,1,6.5,1.7A7.8,7.8,0,0,1,96,89.1v41.6a7.9,7.9,0,0,1-4.6,7.2A20,20,0,1,0,120,156V28a8,8,0,0,1,8-8h40a8,8,0,0,1,8,8,48,48,0,0,0,48,48A8,8,0,0,1,232,84Z" id="mainIconPathAttribute"></path></svg></a>
+                          <a class="instagram" title="group streaming" href="https://www.facebook.com/groups/995607877797541" rel="nofollow noopener" target="_blank"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                       viewBox="0 0 509.421 509.421" style="enable-background:new 0 0 509.421 509.421;" xml:space="preserve">
+                    <g>
+                      <path style="fill:#9BC9FF;" d="M409.421,251.348V123.073c-35.366,0-64.139,28.772-64.139,64.138S374.055,251.348,409.421,251.348z"
+                        />
+                      <path style="fill:#57A4FF;" d="M473.56,187.211c0-35.366-28.772-64.138-64.139-64.138v128.275
+                        C444.788,251.348,473.56,222.576,473.56,187.211z"/>
+                      <path style="fill:#9BC9FF;" d="M509.421,366.348c0-55.14-44.859-100-100-100c-28.619,0-55.206,12.071-73.879,32.602
+                        c26.098,21.11,43.814,52.191,47.288,87.398h126.591V366.348z"/>
+                      <path style="fill:#9BC9FF;" d="M173.879,298.95c-18.673-20.53-45.26-32.602-73.879-32.602c-55.14,0-100,44.86-100,100v20h126.59
+                        C130.065,351.141,147.781,320.06,173.879,298.95z"/>
+                      <path style="fill:#9BC9FF;" d="M100,251.348V123.073c-35.366,0-64.138,28.772-64.138,64.138S64.634,251.348,100,251.348z"/>
+                      <path style="fill:#57A4FF;" d="M164.138,187.211c0-35.366-28.772-64.138-64.138-64.138v128.275
+                        C135.366,251.348,164.138,222.576,164.138,187.211z"/>
+                      <path style="fill:#003F8A;" d="M335.542,298.95c-22.114-17.888-50.242-28.619-80.832-28.619v148.76h128.75v-20
+                        c0-4.3-0.216-8.55-0.63-12.742C379.356,351.141,361.64,320.06,335.542,298.95z"/>
+                      <path style="fill:#003F8A;" d="M334.71,170.331c0-44.11-35.89-80-80-80v160C298.82,250.331,334.71,214.451,334.71,170.331z"/>
+                      <path style="fill:#005ECE;" d="M173.879,298.95c-26.098,21.11-43.814,52.191-47.289,87.398c-0.414,4.193-0.63,8.443-0.63,12.742v20
+                        h128.75v-148.76C224.121,270.331,195.993,281.062,173.879,298.95z"/>
+                      <path style="fill:#005ECE;" d="M254.71,250.331v-160c-44.11,0-80,35.89-80,80C174.71,214.451,210.6,250.331,254.71,250.331z"/>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    <g>
+                    </g>
+                    </svg></a>
+                       <a class="pinterest" title="Pinterest" href="https://id.pinterest.com/CodeCandilKuya/info-live-streaming/" rel="nofollow noopener" target="_blank"><svg viewbox="0 0 24 24"><path d="M9.04,21.54C10,21.83 10.97,22 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2A10,10 0 0,0 2,12C2,16.25 4.67,19.9 8.44,21.34C8.35,20.56 8.26,19.27 8.44,18.38L9.59,13.44C9.59,13.44 9.3,12.86 9.3,11.94C9.3,10.56 10.16,9.53 11.14,9.53C12,9.53 12.4,10.16 12.4,10.97C12.4,11.83 11.83,13.06 11.54,14.24C11.37,15.22 12.06,16.08 13.06,16.08C14.84,16.08 16.22,14.18 16.22,11.5C16.22,9.1 14.5,7.46 12.03,7.46C9.21,7.46 7.55,9.56 7.55,11.77C7.55,12.63 7.83,13.5 8.29,14.07C8.38,14.13 8.38,14.21 8.35,14.36L8.06,15.45C8.06,15.62 7.95,15.68 7.78,15.56C6.5,15 5.76,13.18 5.76,11.71C5.76,8.55 8,5.68 12.32,5.68C15.76,5.68 18.44,8.15 18.44,11.43C18.44,14.87 16.31,17.63 13.26,17.63C12.29,17.63 11.34,17.11 11,16.5L10.33,18.87C10.1,19.73 9.47,20.88 9.04,21.57V21.54Z"></path></svg></a>
+                        </div>
+                      </div>
+                    </div> 
+                    <style>
+                      #ignielSubscribe {width:300px; height:auto; background-color:#fff; border-radius:7.5px; display:block; margin:auto; line-height:40px; padding:0px}
+                      #ignielSubscribe .email__ {padding: 4px 15px 5px;}
+                      #ignielSubscribe .email {margin:auto; color:#555; text-align:center;}
+                      #ignielSubscribe .email:before {content:''; width:50px; height:50px; display:block; text-align:center; margin:auto; border-radius:100px; transition:all .3s ease; -webkit-animation:ignielRing 5s 0s ease-in-out infinite; -webkit-transform-origin:50% 4px; -moz-animation:ignielRing 5s 0s ease-in-out infinite; -moz-transform-origin:50% 4px; animation:ignielRing 5s 0s ease-in-out infinite; transform-origin:50% 4px; background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21M19.75,3.19L18.33,4.61C20.04,6.3 21,8.6 21,11H23C23,8.07 21.84,5.25 19.75,3.19M1,11H3C3,8.6 3.96,6.3 5.67,4.61L4.25,3.19C2.16,5.25 1,8.07 1,11Z' fill='%230369c7'/%3E%3C/svg%3E") center center / 50px no-repeat;}
+                      #ignielSubscribe .medsos__ {padding:15px 0px; line-height:0px;}
+                      #ignielSubscribe form {display:-webkit-box; display:-webkit-flex; display:-moz-box; display:-ms-flexbox; display:flex; flex-wrap:nowrap; align-items:center; margin:0px 0px 15px; padding:0px; position:relative;}
+                      #ignielSubscribe form:before {left:15px; position:absolute; display:block; width:20px; height:20px; background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z' fill='%230369c7'/%3E%3C/svg%3E") no-repeat; content:'';}
+                      #ignielSubscribe input {width: calc(100% - 35px); background-color:#ccc; line-height:1.5em; border:1px solid #ccc; border-right:0px; padding:8px 10px 8px 40px; font-size:12px; text-align:left !important; border-radius:50px 0px 0px 50px; outline:none; outline-width:0px; box-shadow:none; -moz-box-shadow:none; -webkit-box-shadow:none;}
+                      #ignielSubscribe button {background-color:#0369c7; width:40px; min-width:40px; height:36px; margin:0px; padding:0px; border:0px; box-shadow:none; vertical-align:top; cursor:pointer; transition:all .3s ease; background-image:unset; border-radius:0px 50px 50px 0px;}
+                      #ignielSubscribe button:hover, #ignielSubscribe button:focus {background-color:var(--color-hover);}
+                      #ignielSubscribe button:before {display:inline-block; width:20px; height:20px; margin:0px; background:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2,21L23,12L2,3V10L17,12L2,14V21Z' fill='%23fff'/%3E%3C/svg%3E") no-repeat; content:''; vertical-align:-3px;}
+                      #ignielSubscribe .medsos {width:100%; text-align:center;}
+                      #ignielSubscribe .medsos svg {width:20px;height:20px;margin-top:7px}
+                      #ignielSubscribe .medsos svg path {fill:#fff}
+                      #ignielSubscribe .medsos a {display:inline-block; margin-right:7px; width:35px; height:35px; box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.4); transition: all ease-in-out 300ms; border-radius:100px;}
+                      #ignielSubscribe .medsos a:last-child {margin-right:0px;}
+                      #ignielSubscribe .medsos a:hover {box-shadow: 0px 23px 15px -3px rgba(0,0,0,0.25); transform: translate(0px, -10px) scale(1.05);}
+                      #ignielSubscribe .medsos .facebook{background:#3a579a}
+                      #ignielSubscribe .medsos .twitter {background:#00abf0}
+                      #ignielSubscribe .medsos .googleplus {background:#df4a32}
+                      #ignielSubscribe .medsos .youtube {background:#000}
+                      #ignielSubscribe .medsos .instagram {background:hsl(277, 100%, 93%)}
+                      #ignielSubscribe .medsos .pinterest {background:#e60023}
+                      @-webkit-keyframes ignielRing{
+                        0% { -webkit-transform: rotateZ(0); }
+                        1% { -webkit-transform: rotateZ(30deg); }
+                        3% { -webkit-transform: rotateZ(-28deg); }
+                        5% { -webkit-transform: rotateZ(34deg); }
+                        7% { -webkit-transform: rotateZ(-32deg); }
+                        9% { -webkit-transform: rotateZ(30deg); }
+                        11% { -webkit-transform: rotateZ(-28deg); }
+                        13% { -webkit-transform: rotateZ(26deg); }
+                        15% { -webkit-transform: rotateZ(-24deg); }
+                        17% { -webkit-transform: rotateZ(22deg); }
+                        19% { -webkit-transform: rotateZ(-20deg); }
+                        21% { -webkit-transform: rotateZ(18deg); }
+                        23% { -webkit-transform: rotateZ(-16deg); }
+                        25% { -webkit-transform: rotateZ(14deg); }
+                        27% { -webkit-transform: rotateZ(-12deg); }
+                        29% { -webkit-transform: rotateZ(10deg); }
+                        31% { -webkit-transform: rotateZ(-8deg); }
+                        33% { -webkit-transform: rotateZ(6deg); }
+                        35% { -webkit-transform: rotateZ(-4deg); }
+                        37% { -webkit-transform: rotateZ(2deg); }
+                        39% { -webkit-transform: rotateZ(-1deg); }
+                        41% { -webkit-transform: rotateZ(1deg); }
+                        43% { -webkit-transform: rotateZ(0); }
+                        100% { -webkit-transform: rotateZ(0); }
+                      }
+                      @-moz-keyframes ignielRing{
+                        0% { -moz-transform: rotate(0); }
+                        1% { -moz-transform: rotate(30deg); }
+                        3% { -moz-transform: rotate(-28deg); }
+                        5% { -moz-transform: rotate(34deg); }
+                        7% { -moz-transform: rotate(-32deg); }
+                        9% { -moz-transform: rotate(30deg); }
+                        11% { -moz-transform: rotate(-28deg); }
+                        13% { -moz-transform: rotate(26deg); }
+                        15% { -moz-transform: rotate(-24deg); }
+                        17% { -moz-transform: rotate(22deg); }
+                        19% { -moz-transform: rotate(-20deg); }
+                        21% { -moz-transform: rotate(18deg); }
+                        23% { -moz-transform: rotate(-16deg); }
+                        25% { -moz-transform: rotate(14deg); }
+                        27% { -moz-transform: rotate(-12deg); }
+                        29% { -moz-transform: rotate(10deg); }
+                        31% { -moz-transform: rotate(-8deg); }
+                        33% { -moz-transform: rotate(6deg); }
+                        35% { -moz-transform: rotate(-4deg); }
+                        37% { -moz-transform: rotate(2deg); }
+                        39% { -moz-transform: rotate(-1deg); }
+                        41% { -moz-transform: rotate(1deg); }
+                        43% { -moz-transform: rotate(0); }
+                        100% { -moz-transform: rotate(0); }
+                      }
+                      @keyframes ignielRing{
+                        0% { transform: rotate(0); }
+                        1% { transform: rotate(30deg); }
+                        3% { transform: rotate(-28deg); }
+                        5% { transform: rotate(34deg); }
+                        7% { transform: rotate(-32deg); }
+                        9% { transform: rotate(30deg); }
+                        11% { transform: rotate(-28deg); }
+                        13% { transform: rotate(26deg); }
+                        15% { transform: rotate(-24deg); }
+                        17% { transform: rotate(22deg); }
+                        19% { transform: rotate(-20deg); }
+                        21% { transform: rotate(18deg); }
+                        23% { transform: rotate(-16deg); }
+                        25% { transform: rotate(14deg); }
+                        27% { transform: rotate(-12deg); }
+                        29% { transform: rotate(10deg); }
+                        31% { transform: rotate(-8deg); }
+                        33% { transform: rotate(6deg); }
+                        35% { transform: rotate(-4deg); }
+                        37% { transform: rotate(2deg); }
+                        39% { transform: rotate(-1deg); }
+                        41% { transform: rotate(1deg); }
+                        43% { transform: rotate(0); }
+                        100% { transform: rotate(0); }
+                          }  </style>
+                  <div id="histats_counter"></div>
+                  <!-- Histats.com  START  (aync)-->
+                  <script type="text/javascript">var _Hasync = _Hasync || [];
+                    _Hasync.push(['Histats.start', '1,4727940,4,2049,280,25,00001001']);
+                    _Hasync.push(['Histats.fasi', '1']);
+                    _Hasync.push(['Histats.track_hits', '']);
+                    (function () {
+                      var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+                      hs.src = ('//s10.histats.com/js15_as.js');
+                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+                    })();</script>
+                  <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4727940&101" alt=""
+                        border="0"></a></noscript>
+              </center>
+              <!-- Histats.com  END  --><!-- Footer -->
+              <br>
+              <center>
+                <a class="btn m-1 btn-dark" href="#"> JOIN TELEGRAM </a>
+                <a class="btn m-1 btn-dark" href="#"> DOWNLOAD APK </a>
+
+              </center>
+              </p>
+            </div>
+            </br>
+            <br>
+            <!-- Footer Nav -->
+            <div class="footer-nav-area" id="footerNav">
+              <div class="container px-0">
+                <!-- Footer Content -->
+                <div class="footer-nav position-relative">
+                  <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+                    <li><a href="#"> <i class="bi bi-tablet"></i><span>Apk</span></a></li>
+                    <li><a
+                        href="whatsapp://send?text=Saya sedang menonton Acara LIVE di Situs Streaming di *TAKICI TV* s.id/takicitv"
+                        data-action="share/whatsapp/share"> <i class="bi bi-whatsapp"></i> <span>Share</span></a></li>
+                    <li class=""><a href="/"> <i class="bi bi-house"></i><span>Home</span></a></li>
+                    <li><a href="/tv_lokal_indonesia_2022.html"> <i class="bi bi-collection-play"></i>
+                        <span>LOKAL</span></a></li>
+                    <li><a href="#"> <i class="bi bi-gift"></i> <span>Traktir</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+</body>
+
+</html>
