@@ -610,6 +610,33 @@
       color: #fff;
       text-transform: uppercase;
     }
+    #fb-share-button {
+    background: #3b5998;
+    border-radius: 3px;
+    font-weight: 600;
+    padding: 5px 8px;
+    display: inline-block;
+    position: static;
+}
+
+#fb-share-button:hover {
+    cursor: pointer;
+    background: #213A6F
+}
+
+#fb-share-button svg {
+    width: 18px;
+    fill: white;
+    vertical-align: middle;
+    border-radius: 2px
+}
+
+#fb-share-button span {
+    vertical-align: middle;
+    color: white;
+    font-size: 14px;
+    padding: 0 3px
+}
   </style>
 </head>
 
@@ -752,8 +779,16 @@
               <!-- Histats.com  END  --><!-- Footer -->
               <br>
               <center>
-                <a class="btn m-1 btn-dark" href="https://t.me/livestream808"> JOIN TELEGRAM </a>
-                <a class="btn m-1 btn-dark" href="https://t.me/livestream808"> DOWNLOAD APK </a>
+                <a class='btn m-1 btn-dark' href='https://t.me/livestream808' rel='nofollow noopener' target='_blank'>Join Telegram</a>
+                  <a class='btn m-1 btn-dark' data-action='share/whatsapp/share' href='whatsapp://send?text=https://indonesia.score808.eu.org' rel='nofollow noopener' target='_blank'> <i class='bi bi-whatsapp'/> Share</a>
+
+  <div id='fb-share-button'>
+    <svg preserveAspectRatio='xMidYMid meet' viewBox='0 0 12 12'>
+        <path class='svg-icon-path' d='M9.1,0.1V2H8C7.6,2,7.3,2.1,7.1,2.3C7,2.4,6.9,2.7,6.9,3v1.4H9L8.8,6.5H6.9V12H4.7V6.5H2.9V4.4h1.8V2.8 c0-0.9,0.3-1.6,0.7-2.1C6,0.2,6.6,0,7.5,0C8.2,0,8.7,0,9.1,0.1z'/>
+    </svg>
+    <span>Share</span>
+</div>
+   <div id='histats_counter'/>
 
               </center>
               </p>
@@ -780,5 +815,17 @@
             </div>
 <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',5643983,document.body||document.documentElement)</script> 
 <link rel="stylesheet" href="sw.js">
+<script type='text/javascript'>//<![CDATA[
+  var fbButton = document.getElementById('fb-share-button');
+var url = window.location.href;
+
+fbButton.addEventListener('click', function() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+        'facebook-share-dialog',
+        'width=800,height=600'
+    );
+    return false;
+});
+//]]></script>
 </body>
 </html>
