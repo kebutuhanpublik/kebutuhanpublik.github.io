@@ -55,12 +55,7 @@ a:link,a:visited,.widget_bottom h1,.widget_bottom .caption{color:#ffffff}.bg-ria
 </ul>
 </div>
 </div><div class="widget LinkList">
-<iframe
-  id="score808frame"
-  scrolling="no"
-  src="https://official.score808.my.id/p/schedule.html"
-  style="width: 100%; border: none; min-height: 600px;"
-></iframe>
+<iframe id='score808frame' scrolling='no' src='https://official.score808.my.id/p/schedule.html' style='width: 100%; border: none;'></iframe>
 <div class="widget-content">
 <div class="bioLink">
 <div class="bioLink-item">
@@ -108,7 +103,7 @@ a:link,a:visited,.widget_bottom h1,.widget_bottom .caption{color:#ffffff}.bg-ria
 	<script>
 // <![CDATA[
 window.addEventListener("message", function(e) {
-  if (e.origin !== "https://official.score808.my.id/") return;
+  if (e.origin !== "https://official.score808.my.id") return;
   const iframe = document.getElementById("score808frame");
   if (e.data && e.data.height) {
     iframe.style.height = e.data.height + "px";
