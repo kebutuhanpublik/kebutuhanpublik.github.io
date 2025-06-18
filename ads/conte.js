@@ -252,7 +252,7 @@ function makeStreamLink(url, cover) {
   if (!url) return null;
 
   // Ganti domain lama ke domain baru
-  const fixedUrl = url.replace("bf.jalaplay.net", "bf.jabflive.cc");
+  const fixedUrl = url.replace("bf.jalaplay.net", "bf.jabflive.com");
 
   const playerUrl = `https://jlbfpc.jlbfyh.com/index.php?url=${encodeURIComponent(fixedUrl)}&cover=${encodeURIComponent(
     cover || 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7i8aOEq9nbqCuQ2Dg8LIjZAaEbz9gKYVZNCiFhftNjo1UBUqrF52SruG-sHaXiPmJV6Xf4-n5Vd9vR7i8AJEKcVv5E7o-gqM3jecMC3UUvV-dF8cLzVLGG5dbifWHQnzcvhuIAdsV8tcnCLi2SqApDmr7U_Phzugv28TxPSZGqAATnhtsfIXDpoqpQf0/s1600/jalativiblogspotcom.png'
