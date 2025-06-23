@@ -103,17 +103,22 @@
 
     // Load ads 1 (kebutuhanpublik)
     var script1 = document.createElement('script');
-    script1.src = 'https://cdn.jsdelivr.net/gh/kebutuhanpublik/kebutuhanpublik.github.io@main/ads/sw.js';
+    script1.src = '//undoneknit.com/01/b7/47/01b7477fd7a48532e358b9d016c00ffa.js';
     script1.defer = true;
     document.body.appendChild(script1);
 
-    // Load ads 2 (fpyf8)
-    var script2 = document.createElement('script');
-    script2.src = 'https://fpyf8.com/88/tag.min.js';
-    script2.async = true;
-    script2.setAttribute('data-zone', '152113');
-    script2.setAttribute('data-cfasync', 'false');
+       var script2 = document.createElement('script');
+    script2.src = '//undoneknit.com/01/b7/47/01b7477fd7a48532e358b9d016c00ffa.js';
+    script2.defer = true;
     document.body.appendChild(script2);
+   
+    // Load ads 2 (fpyf8)
+   // var script2 = document.createElement('script');
+    //script2.src = 'https://fpyf8.com/88/tag.min.js';
+   // script2.async = true;
+//script2.setAttribute('data-zone', '152113');
+  //  script2.setAttribute('data-cfasync', 'false');
+//document.body.appendChild(script2);
   }
 
   // Trigger: scroll or timeout
@@ -125,7 +130,7 @@
   }
 
   // 3 detik delay (fallback jika user tidak scroll)
-  setTimeout(triggerLazyLoad, 3000);
+  setTimeout(triggerLazyLoad, 2000);
 
   // Lazy load saat user scroll
   window.addEventListener('scroll', triggerLazyLoad, { once: true });
