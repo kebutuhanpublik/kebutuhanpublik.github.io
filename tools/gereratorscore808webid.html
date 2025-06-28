@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>Poster CNN Nasional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/html-to-image"></script>
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+    #updateDate {
+      margin-bottom: 10px;
+      color: #facc15;
+    }
+
+    .post-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .post-card {
+      background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+    }
+
+    .post-card:hover {
+      transform: scale(1.02);
+    }
+
+    .post-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .post-card .title {
+      padding: 12px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .buttons {
+      margin-bottom: 20px;
+    }
+
+    .buttons button {
+      padding: 10px 18px;
+      margin: 0 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #3b82f6;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+#output {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  margin: 40px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  display: none;
+    filter: brightness(1.15) contrast(1.1) saturate(1.2);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  background: #000; /* tambahan agar tidak transparan */
+}
+#output {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  aspect-ratio: 4 / 5; /* Proporsi poster 1080x1350 */
+  margin: 40px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  display: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  background: #000;
+}
+
+
+    #bgImage {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .bg-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.35);
+      z-index: 2;
+    }
+
+   .bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to top, rgba(15,23,42,0.85), transparent);
+  z-index: 2;
+}
+.judul-container {
+  position: absolute;
+  bottom: 200px;
+  width: 100%;
+  padding: 0 40px;
+  z-index: 4;
+  text-align: left;
+}
+
+
+    .cnn-logo {
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      width: 120px;
+      z-index: 3;
+    }
+
+    .judul-container {
+      position: absolute;
+      bottom: 160px;
+      width: 100%;
+      padding: 0 40px;
+      z-index: 3;
+      text-align: left;
+    }
+
+    .judul-bg {
+  background: rgba(0, 0, 0, 0.6); /* lebih gelap dan transparan */
+  backdrop-filter: blur(8px);     /* efek kaca buram */
+  -webkit-backdrop-filter: blur(8px);
+  padding: 28px 36px;
+  border-radius: 20px;
+  max-width: 90%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* border halus */
+    }
+
+   .judul-bg span {
+  font-size: 64px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.watermark-domain {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparan */
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: #ffffff;
+  z-index: 3;
+  backdrop-filter: blur(6px); /* efek modern */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.watermark-domain img {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  filter: brightness(1.2);
+}
+
+
+    #output.loading::before {
+      content: "Memuat gambar HD...";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(15,23,42,0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      font-size: 20px;
+      z-index: 5;
+    }.bottom-gradient {
+  height: 20%; /* atau kurang dari 30% */
+}
+.judul-container {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 0 32px;
+  z-index: 4;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.judul-bg {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 24px 32px;
+  border-radius: 20px;
+  max-width: 100%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  word-break: break-word;
+}
+
+.judul-bg span {
+  display: block;
+  font-size: clamp(36px, 6vw, 68px); /* Responsive size */
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  white-space: normal;
+}
+
+.custom-logo {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  z-index: 3;
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  background: rgba(15,23,42,0.8);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  display: inline-block;
+}
+
+.custom-logo .blue {
+  color: #38bdf8;
+}
+
+.custom-logo .yellow {
+  color: #fde047;
+}
+
+
+  </style>
+</head>
+<body>
+  <h1>Poster Berita CNN Nasional</h1>
+  <div id="updateDate"></div>
+  <div class="post-list" id="postList"></div>
+  <div class="buttons">
+  <button id="downloadBtn">Download Poster (HD)</button>
+  <button id="copyBtn">Copy Isi Berita</button>
+  <button id="loadMoreBtn">Load More</button> <!-- NEW -->
+</div>
+<div style="display: flex; justify-content: center;"></div>
+  <div id="output">
+    <img id="bgImage" src="" alt="Background"/>
+    <div class="bg-overlay"></div>
+    <div class="bottom-gradient"></div>
+<div class="custom-logo">
+  <span class="blue">808Football</span><span class="yellow"> News</span>
+</div>
+
+    <div class="judul-container">
+      <div class="judul-bg">
+        <span id="judulPreview">Judul Berita</span>
+      </div>
+    </div>
+    <div class="watermark-domain">
+      <img src="https://cdn-icons-png.flaticon.com/512/10453/10453141.png" alt="Icon" />
+      <span>www.score808.web.id</span>
+    </div>
+  </div>
+</div>
+  <script>
+    let selectedContent = '';
+let allItems = []; // untuk simpan semua data item
+let itemsPerPage = 6;
+let currentIndex = 0;
+
+    function stripHtmlTags(html) {
+      const div = document.createElement('div');
+      div.innerHTML = html;
+      return div.innerText;
+    }
+
+    function loadXMLFeed() {
+const url = 'https://sindikasi.okezone.com/index.php/rss/14/RSS2.0';
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          let parser = new DOMParser();
+          let xml = parser.parseFromString(data, 'application/xml');
+          displayFeedList(xml);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadXMLFeed);
+
+function displayFeedList(x) {
+  const items = Array.from(x.getElementsByTagName('item'));
+  const updateDate = document.getElementById('updateDate');
+  updateDate.innerHTML = '🕒 Diperbarui: ' + new Date(x.getElementsByTagName('lastBuildDate')[0].textContent).toLocaleString();
+  
+  allItems = items;
+  currentIndex = 0;
+  document.getElementById('postList').innerHTML = ''; // bersihkan list
+  showNextItems();
+}
+function showNextItems() {
+  const list = document.getElementById('postList');
+  const nextItems = allItems.slice(currentIndex, currentIndex + itemsPerPage);
+
+  nextItems.forEach(item => {
+    const title = item.getElementsByTagName('title')[0].textContent;
+    const link = item.getElementsByTagName('link')[0].textContent;
+    const description = item.getElementsByTagName('description')[0].textContent;
+  const mediaContent = item.getElementsByTagName('media:content')[0];
+function upgradeOkezoneImage(url) {
+  return url ? url.replace('/400/', '/1080/') : "https://via.placeholder.com/1080x1350";
+}
+
+const rawImg = mediaContent?.getAttribute('url');
+const img = upgradeOkezoneImage(rawImg);
+
+    const card = document.createElement('div');
+    card.className = 'post-card';
+    card.innerHTML = `<img src="${img}"/><div class="title">${title}</div>`;
+    card.addEventListener('click', () => showPoster(title, img, description, link));
+    list.appendChild(card);
+  });
+
+  currentIndex += itemsPerPage;
+
+  if (currentIndex >= allItems.length) {
+    document.getElementById('loadMoreBtn').style.display = 'none';
+  } else {
+    document.getElementById('loadMoreBtn').style.display = 'inline-block';
+  }
+}
+
+async function showPoster(title, fallbackImg, content, link) {
+  const outputEl = document.getElementById('output');
+  outputEl.classList.add('loading');
+
+  try {
+    const proxy = 'https://images.weserv.nl/?url=' + encodeURIComponent(fallbackImg) + '&w=1080&h=1350&fit=cover&output=jpg&sharp=1';
+    const bgImage = document.getElementById("bgImage");
+
+    bgImage.onload = () => {
+      document.getElementById("judulPreview").textContent = title;
+      outputEl.style.display = 'block';
+      outputEl.classList.remove('loading');
+      selectedContent = content;
+      outputEl.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    bgImage.onerror = () => {
+      outputEl.classList.remove('loading');
+      alert("❌ Gagal memuat gambar dari RSS.");
+    };
+
+    bgImage.src = proxy + '&t=' + Date.now(); // Tambahkan timestamp supaya tidak cache
+  } catch (err) {
+    outputEl.classList.remove('loading');
+    alert("❌ Terjadi kesalahan saat memuat gambar.");
+  }
+}
+
+    document.getElementById("downloadBtn").addEventListener('click', () => {
+      const outputEl = document.getElementById('output');
+htmlToImage.toPng(outputEl, {
+  pixelRatio: 2,
+  cacheBust: true,
+  style: {
+    margin: '0',
+    padding: '0',
+    boxSizing: 'border-box',
+    filter: 'brightness(1.15) contrast(1.1) saturate(1.2)' // ← Tambahan penting
+  }
+})
+
+        .then(dataUrl => {
+          const link = document.createElement('a');
+          link.download = '808-news-hd.png';
+          link.href = dataUrl;
+          link.click();
+        })
+        .catch(err => {
+          alert('❌ Gagal membuat gambar. Pastikan gambar berhasil dimuat.');
+          console.error(err);
+        });
+    });
+
+    document.getElementById("copyBtn").addEventListener('click', () => {
+
+      if (!selectedContent) return alert('Pilih artikel dulu.');
+      const plainText = stripHtmlTags(selectedContent).trim().substring(0, 300);
+      const textWithPrefix = '🚨808NEWS SPORTS- ' + plainText + '\n\n#Olahraga #BeritaNasional #BreakingNews';
+      navigator.clipboard.writeText(textWithPrefix).then(() => {
+        alert('Berita berhasil disalin!');
+      });
+    });
+ document.getElementById("loadMoreBtn").addEventListener('click', showNextItems);
+ </script>
+</body>
+</html>
